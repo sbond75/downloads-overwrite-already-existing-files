@@ -59,5 +59,5 @@
 **/
 
 chrome.downloads.onDeterminingFilename.addListener(function (item, suggest) {
-	suggest({filename: '..', conflictAction: 'overwrite'});
+	suggest({filename: '..', conflictAction: 'uniquify'}); // We don't overwrite the download with my modifiation. Instead, "the filename is changed to include a counter before the filename extension." ( https://developer.chrome.com/docs/extensions/reference/downloads/#event-onDeterminingFilename )
 });
